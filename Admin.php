@@ -731,11 +731,11 @@ $active_tab = $_GET['tab'] ?? 'dashboard';
                 </select>
               </div>
               <div class="form-group">
-                <label>Price ($)</label>
+                <label>Price (Tsh)</label>
                 <input type="number" name="price" class="form-control" step="0.01" placeholder="24.99" required/>
               </div>
               <div class="form-group">
-                <label>Old Price ($) <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+                <label>Old Price (Tsh) <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
                 <input type="number" name="old_price" class="form-control" step="0.01" placeholder="34.99"/>
               </div>
               <div class="form-group">
@@ -839,8 +839,8 @@ $active_tab = $_GET['tab'] ?? 'dashboard';
                   <?php else: ?><span style="color:var(--text-soft); font-size:13px;">—</span><?php endif; ?>
                 </td>
                 <td>
-                  <div class="price-now">$<?= number_format($p['price'], 2) ?></div>
-                  <?php if (!empty($p['old_price']) && $p['old_price'] > 0): ?><div class="price-was">$<?= number_format($p['old_price'], 2) ?></div><?php endif; ?>
+                  <div class="price-now">Tsh<?= number_format($p['price'], 2) ?></div>
+                  <?php if (!empty($p['old_price']) && $p['old_price'] > 0): ?><div class="price-was">Tsh<?= number_format($p['old_price'], 2) ?></div><?php endif; ?>
                 </td>
                 <td>
                   <?php $badge = strtolower($p['badge'] ?? ''); $pillClass = match($badge) { 'hot' => 'pill-hot', 'new' => 'pill-new', 'sale' => 'pill-sale', default => 'pill-none' }; echo '<span class="badge-pill ' . $pillClass . '">' . ($p['badge'] ?: '—') . '</span>'; ?>
