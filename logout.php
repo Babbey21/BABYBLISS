@@ -1,18 +1,8 @@
 <?php
 session_start();
-
-// Clear all session data
 $_SESSION = array();
-
-// Destroy session cookie
-if (isset($_COOKIE[session_name()])) {
-    setcookie(session_name(), '', time() - 3600, '/');
-}
-
-// Destroy the session
+if (isset($_COOKIE[session_name()])) setcookie(session_name(), '', time() - 3600, '/');
 session_destroy();
-
-// Redirect to login page with success message
-header("Location: login.php?logged_out=1");
+header("Location: index.php");
 exit();
 ?>
